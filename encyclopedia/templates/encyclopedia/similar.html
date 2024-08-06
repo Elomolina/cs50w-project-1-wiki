@@ -1,0 +1,14 @@
+{% extends 'encyclopedia/layout.html'%}
+
+{% block body %}
+<h1>Entries similar to {{session.entry}}</h1>
+<ul>
+    {% for entry in session.substrings %}
+    <li>
+        <a href="{% url 'encyclopedia' entry%}">
+            {{entry}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
