@@ -63,3 +63,7 @@ def random_page(request):
     random_entry = random.choice(entries)
     redirect_path = reverse("encyclopedia", args = [random_entry])
     return HttpResponseRedirect(redirect_path)
+
+
+def create(request):
+    return render(request, "encyclopedia/create.html")

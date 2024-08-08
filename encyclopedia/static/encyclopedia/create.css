@@ -1,0 +1,38 @@
+textarea 
+{
+    height: 300px;
+    width: 100%;
+}
+#form 
+{
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    background-color: #E8C5E5;
+    width: 70%;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+label 
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1em;
+}
+#form input[type=text]
+{
+    height: 40px;
+}
+#remember
+{
+    font-weight: lighter;
+    font-size: 0.8rem;
+}
+section 
+{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

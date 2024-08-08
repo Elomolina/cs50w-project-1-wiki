@@ -1,6 +1,11 @@
+body,html 
+{
+    height: 100%;
+}
 body {
     margin: 0;
     background-color: white;
+    display: flex;
 }
 
 code {
@@ -11,14 +16,9 @@ h1 {
     margin-top: 0px;
     padding-top: 20px;
 }
-
-textarea {
-    height: 90vh;
-    width: 80%;
-}
-
 .main {
     padding: 10px;
+    width:100%;
 }
 
 .search {
@@ -28,11 +28,15 @@ textarea {
 }
 
 .sidebar {
-    background-color: #f0f0f0;
-    height: 100vh;
-    padding: 20px;
+    background-color: #ce4242;
+    height: 100%;
+    padding: 30px;
 }
 
 .sidebar h2 {
     margin-top: 5px;
+}
+.sidebar a 
+{
+    background-color: black;
 }
