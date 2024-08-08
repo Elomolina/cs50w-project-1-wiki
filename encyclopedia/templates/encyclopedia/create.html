@@ -13,17 +13,30 @@ create
 <h1>Create new page</h1>
 <section>
     <form action="{% url 'create'%}" method="post" id="form">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title">
-        <label for="textarea">
-            Enter content
-            <br>
-            <span id="remember">
-                Remember the content should use markdown
-                more info about markdown in <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">the github markdown guide</a>
-            </span>
-        </label>
-        <textarea name="textarea" id="textarea" placeholder="Content"></textarea>
+        {% csrf_token %}
+        {% for field in form%}
+        {{field.label_tag}}
+        <h5>
+
+        </h5>
+        {{field}}
+        {% if field.errors %}
+        {% for err in field.errors %}
+        <h6 class="error">{{err}}</h6>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        <div class="sub">
+            <input type="submit" value="Save new page">
+        </div>
+        {% if entry %}
+        <h5>A page for 
+            <a href="{% url 'encyclopedia' entry%}">
+                {{entry}} 
+            </a>
+            already exist
+        </h5>
+        {% endif %}
     </form>
 </section>
 {% endblock %}

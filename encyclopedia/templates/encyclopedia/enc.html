@@ -4,5 +4,8 @@
 {{title}}
 {% endblock %}
 {% block body %}
-{{html_conversion | safe}}
+<div class="content">
+    {{html_conversion | safe}}
+    <a href="{% url 'edit_encyclopedia' title%}">Edit {{title}} markdown content</a>
+</div>
 {% endblock %}

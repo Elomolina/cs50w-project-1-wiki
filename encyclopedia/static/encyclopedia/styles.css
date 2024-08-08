@@ -28,7 +28,7 @@ h1 {
 }
 
 .sidebar {
-    background-color: #ce4242;
+    background-color: #f0f0f0;
     height: 100%;
     padding: 30px;
 }
@@ -38,5 +38,17 @@ h1 {
 }
 .sidebar a 
 {
-    background-color: black;
+    margin-top: 20em;
+}
+.links 
+{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+}
+.content 
+{
+    margin: 1em;
 }

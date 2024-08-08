@@ -1,0 +1,22 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'encyclopedia/create.css'%}">
+{% endblock %}
+
+{% block title %}
+edit {{title}}
+{% endblock %}
+{% block body %}
+<h1>Edit mardown content: 
+    <a href="{% url 'encyclopedia' title%}">
+        {{title}}
+    </a>    
+</h1>
+<form action="{% url 'edit_encyclopedia' title %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Edit content" id="editButton">
+</form>
+{% endblock %}
