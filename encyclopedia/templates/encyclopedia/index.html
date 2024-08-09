@@ -5,16 +5,14 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
-
-    <ul>
+    <h1 id="h1Page">All Pages</h1>
+    <div class="pages">
         {% for entry in entries %}
-            <li>
+            <h3 class="h3">
                 <a href="{% url 'encyclopedia' entry %}">
                     {{entry}}
                 </a>
-            </li>
+            </h3>
         {% endfor %}
-    </ul>
-
+    </div>
 {% endblock %}

@@ -2,13 +2,14 @@
 
 {% block body %}
 <h1>Entries similar to {{session.entry}}</h1>
-<ul>
+<div class="pages">
     {% for entry in session.substrings %}
-    <li>
+    <h3 class="h3">
         <a href="{% url 'encyclopedia' entry%}">
             {{entry}}
         </a>
-    </li>
+    </h3>
     {% endfor %}
-</ul>
+
+</div>
 {% endblock %}

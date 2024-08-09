@@ -27,6 +27,26 @@ def encyclopedia(request, title):
 
 
 def edit(request, title):
+    if request.method == "POST":
+        form = forms.editMarkdown(request.POST)
+        if form.is_valid():
+            textarea = form.cleaned_data['textarea']
+            print(textarea)
+            util.save_entry(title, textarea)
+            redirect_path = reverse("encyclopedia", args = [title])
+            return HttpResponseRedirect(redirect_path)
+
+        #textarea empty
+        else:
+            return render(request, "encyclopedia/edit.html", {
+                "form": form,
+                "title": title
+            })
+    #get
+    if title not in util.list_entries():
+        return render(request, "encyclopedia/error.html", {
+            "error": f"The page for {title} doesn't exist"
+        })
     textarea = util.get_entry(title)
     data = {
         "textarea":textarea
