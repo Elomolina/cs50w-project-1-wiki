@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: wiki
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn wiki.wsgi"
+    autoDeploy: true
+    postDeploy:
+      - python manage.py migrate
