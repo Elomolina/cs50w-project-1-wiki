@@ -103,13 +103,14 @@ def create(request):
         #check if all inputs are valid
         if form.is_valid():
             title = form.cleaned_data['title']
+            title = title.lower()
             content = form.cleaned_data['content']
             entry = util.get_entry(title)
             #check if entry already exist
             if entry is not None:
                 return render(request, "encyclopedia/create.html", {
                 "form": form,
-                "entry": title.lower()
+                "entry": title
                 })
             #creates new entry if it doesnt exist
             else:
