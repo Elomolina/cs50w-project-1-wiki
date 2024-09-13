@@ -11,7 +11,8 @@ pip install django
 pip install markdown2 
 ```
 Apply migrations
-``` python manage.py migrate 
+```
+python manage.py migrate 
 ```
 Run app 
 ```
